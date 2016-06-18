@@ -1,0 +1,6 @@
+framework module Pods_My_Fancy_Room {
+  umbrella header "Pods-My Fancy Room-umbrella.h"
+
+  export *
+  module * { export * }
+}

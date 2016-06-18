@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0A59591D15B74000F26089 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A59581D15B74000F26089 /* LoginViewController.swift */; };
+		8A0A595B1D15C85B00F26089 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A595A1D15C85B00F26089 /* Constants.swift */; };
+		8A0A595E1D15CDBA00F26089 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A595D1D15CDBA00F26089 /* Theme.swift */; };
+		8A0A59621D15D0AC00F26089 /* menuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A59611D15D0AC00F26089 /* menuCell.xib */; };
+		8A0A59641D15D12E00F26089 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A59631D15D12E00F26089 /* MenuCell.swift */; };
+		8A0A59661D15D6B400F26089 /* profileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A59651D15D6B400F26089 /* profileCell.xib */; };
+		8A0A59691D15DBE500F26089 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A59681D15DBE500F26089 /* OptionViewController.swift */; };
+		8A0A596B1D15DBF500F26089 /* Option.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A596A1D15DBF500F26089 /* Option.storyboard */; };
+		8A0A596E1D15DC8800F26089 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A596D1D15DC8800F26089 /* OptionCell.xib */; };
 		8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB43691D1597CE004B97E7 /* AppDelegate.swift */; };
 		8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB436B1D1597CE004B97E7 /* ViewController.swift */; };
 		8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB436D1D1597CE004B97E7 /* Main.storyboard */; };
 		8AEB43711D1597CE004B97E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB43701D1597CE004B97E7 /* Assets.xcassets */; };
 		8AEB43741D1597CE004B97E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB43721D1597CE004B97E7 /* LaunchScreen.storyboard */; };
+		8AEB437D1D15B487004B97E7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB437C1D15B487004B97E7 /* Login.storyboard */; };
+		D277DC0EC634B3B99D109E7B /* Pods_My_Fancy_Room.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F216F31BE3461EA9110DC963 /* Pods_My_Fancy_Room.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E7911BC69268BC4AAFE4238 /* Pods-My Fancy Room.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Fancy Room.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Fancy Room/Pods-My Fancy Room.release.xcconfig"; sourceTree = "<group>"; };
+		8A0A59581D15B74000F26089 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8A0A595A1D15C85B00F26089 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A0A595D1D15CDBA00F26089 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		8A0A59611D15D0AC00F26089 /* menuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = menuCell.xib; sourceTree = "<group>"; };
+		8A0A59631D15D12E00F26089 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		8A0A59651D15D6B400F26089 /* profileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileCell.xib; sourceTree = "<group>"; };
+		8A0A59681D15DBE500F26089 /* OptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		8A0A596A1D15DBF500F26089 /* Option.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Option.storyboard; sourceTree = "<group>"; };
+		8A0A596D1D15DC8800F26089 /* OptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		8AEB43661D1597CE004B97E7 /* My Fancy Room.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fancy Room.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB43691D1597CE004B97E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AEB436B1D1597CE004B97E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +43,9 @@
 		8AEB43701D1597CE004B97E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AEB43731D1597CE004B97E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AEB43751D1597CE004B97E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AEB437C1D15B487004B97E7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B03CF6505FC2447961D75BE4 /* Pods-My Fancy Room.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Fancy Room.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Fancy Room/Pods-My Fancy Room.debug.xcconfig"; sourceTree = "<group>"; };
+		F216F31BE3461EA9110DC963 /* Pods_My_Fancy_Room.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Fancy_Room.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D277DC0EC634B3B99D109E7B /* Pods_My_Fancy_Room.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E94AD2B2A72B009299B44DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B03CF6505FC2447961D75BE4 /* Pods-My Fancy Room.debug.xcconfig */,
+				5E7911BC69268BC4AAFE4238 /* Pods-My Fancy Room.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B37A65F3A40F10F9425AE72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F216F31BE3461EA9110DC963 /* Pods_My_Fancy_Room.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A0A595C1D15C87100F26089 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A595A1D15C85B00F26089 /* Constants.swift */,
+				8A0A595D1D15CDBA00F26089 /* Theme.swift */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		8A0A595F1D15D02A00F26089 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A59601D15D09C00F26089 /* Cell */,
+				8AEB436D1D1597CE004B97E7 /* Main.storyboard */,
+				8AEB436B1D1597CE004B97E7 /* ViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		8A0A59601D15D09C00F26089 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A59611D15D0AC00F26089 /* menuCell.xib */,
+				8A0A59631D15D12E00F26089 /* MenuCell.swift */,
+				8A0A59651D15D6B400F26089 /* profileCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8A0A59671D15DBC300F26089 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A596C1D15DC4100F26089 /* cells */,
+				8A0A59681D15DBE500F26089 /* OptionViewController.swift */,
+				8A0A596A1D15DBF500F26089 /* Option.storyboard */,
+			);
+			name = Selection;
+			sourceTree = "<group>";
+		};
+		8A0A596C1D15DC4100F26089 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A596D1D15DC8800F26089 /* OptionCell.xib */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
 		8AEB435D1D1597CE004B97E7 = {
 			isa = PBXGroup;
 			children = (
 				8AEB43681D1597CE004B97E7 /* My Fancy Room */,
 				8AEB43671D1597CE004B97E7 /* Products */,
+				2E94AD2B2A72B009299B44DE /* Pods */,
+				4B37A65F3A40F10F9425AE72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +146,24 @@
 			isa = PBXGroup;
 			children = (
 				8AEB43691D1597CE004B97E7 /* AppDelegate.swift */,
-				8AEB436B1D1597CE004B97E7 /* ViewController.swift */,
-				8AEB436D1D1597CE004B97E7 /* Main.storyboard */,
+				8AEB437B1D15B208004B97E7 /* Login */,
+				8A0A595F1D15D02A00F26089 /* Main */,
+				8A0A59671D15DBC300F26089 /* Selection */,
+				8A0A595C1D15C87100F26089 /* Tool */,
 				8AEB43701D1597CE004B97E7 /* Assets.xcassets */,
 				8AEB43721D1597CE004B97E7 /* LaunchScreen.storyboard */,
 				8AEB43751D1597CE004B97E7 /* Info.plist */,
 			);
 			path = "My Fancy Room";
+			sourceTree = "<group>";
+		};
+		8AEB437B1D15B208004B97E7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB437C1D15B487004B97E7 /* Login.storyboard */,
+				8A0A59581D15B74000F26089 /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AEB43781D1597CE004B97E7 /* Build configuration list for PBXNativeTarget "My Fancy Room" */;
 			buildPhases = (
+				5C1CC9761C7736FF1079D6D3 /* Check Pods Manifest.lock */,
 				8AEB43621D1597CE004B97E7 /* Sources */,
 				8AEB43631D1597CE004B97E7 /* Frameworks */,
 				8AEB43641D1597CE004B97E7 /* Resources */,
+				7BFC65BF64AC266C26D001C8 /* Embed Pods Frameworks */,
+				47CCF87DE8231A46C662405C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,21 +227,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0A596E1D15DC8800F26089 /* OptionCell.xib in Resources */,
+				8AEB437D1D15B487004B97E7 /* Login.storyboard in Resources */,
+				8A0A59661D15D6B400F26089 /* profileCell.xib in Resources */,
 				8AEB43741D1597CE004B97E7 /* LaunchScreen.storyboard in Resources */,
 				8AEB43711D1597CE004B97E7 /* Assets.xcassets in Resources */,
+				8A0A59621D15D0AC00F26089 /* menuCell.xib in Resources */,
 				8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */,
+				8A0A596B1D15DBF500F26089 /* Option.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47CCF87DE8231A46C662405C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Fancy Room/Pods-My Fancy Room-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1CC9761C7736FF1079D6D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7BFC65BF64AC266C26D001C8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Fancy Room/Pods-My Fancy Room-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AEB43621D1597CE004B97E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0A59591D15B74000F26089 /* LoginViewController.swift in Sources */,
 				8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */,
+				8A0A59641D15D12E00F26089 /* MenuCell.swift in Sources */,
+				8A0A595E1D15CDBA00F26089 /* Theme.swift in Sources */,
+				8A0A59691D15DBE500F26089 /* OptionViewController.swift in Sources */,
 				8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */,
+				8A0A595B1D15C85B00F26089 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +412,7 @@
 		};
 		8AEB43791D1597CE004B97E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B03CF6505FC2447961D75BE4 /* Pods-My Fancy Room.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Fancy Room/Info.plist";
@@ -260,6 +424,7 @@
 		};
 		8AEB437A1D1597CE004B97E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E7911BC69268BC4AAFE4238 /* Pods-My Fancy Room.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Fancy Room/Info.plist";
@@ -288,6 +453,7 @@
 				8AEB437A1D1597CE004B97E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
