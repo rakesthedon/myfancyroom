@@ -64,30 +64,15 @@ class ViewController: UIViewController {
 
 extension ViewController{
     
-    func isProfileSection(section:Int) -> Bool{
-        
-        return section == PROFILESECTION
-    }
+    func isProfileSection(section:Int) -> Bool{ return section == PROFILESECTION }
     
-    func isOptionSection(section:Int) -> Bool{
-        
-        return section == OPTIONSECTION
-    }
+    func isOptionSection(section:Int) -> Bool{ return section == OPTIONSECTION }
     
-    func isFoodCell(indexPath:NSIndexPath) -> Bool {
-        
-        return isOptionSection(indexPath.section) && indexPath.row == FOODOPTION
-    }
+    func isFoodCell(indexPath:NSIndexPath) -> Bool { return isOptionSection(indexPath.section) && indexPath.row == FOODOPTION }
     
-    func isClothesCell(indexPath:NSIndexPath) -> Bool {
-        
-        return isOptionSection(indexPath.section) && indexPath.row == CLOTHEOPTION
-    }
+    func isClothesCell(indexPath:NSIndexPath) -> Bool { return isOptionSection(indexPath.section) && indexPath.row == CLOTHEOPTION }
     
-    func isAmenitiesCell(indexPath:NSIndexPath) -> Bool {
-        
-        return isOptionSection(indexPath.section) && indexPath.row == AMENITIESOPTION
-    }
+    func isAmenitiesCell(indexPath:NSIndexPath) -> Bool { return isOptionSection(indexPath.section) && indexPath.row == AMENITIESOPTION }
     
 }
 
@@ -145,16 +130,38 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if isFoodCell(indexPath) {
-            
+            self.gotoOption(FOODOPTION)
         }
         
         if isClothesCell(indexPath){
             
+            self.gotoOption(CLOTHEOPTION)
         }
         
         if isAmenitiesCell(indexPath){
             
+            self.gotoOption(AMENITIESOPTION)
         }
     }
+    
+    
 }
 
+
+extension ViewController{
+    
+    func gotoOption(mode:Int){
+    
+        let optionSelector = OptionViewController()
+        
+        self.sidemenuController.pushViewController(optionSelector, animated: true)
+        
+        switch (mode){
+        case FOODOPTION:
+            optionSelector.optionTitles = ["Asian", "Indian", "Caribbean"]
+            break;
+        default:break;
+        }
+    }
+    
+}

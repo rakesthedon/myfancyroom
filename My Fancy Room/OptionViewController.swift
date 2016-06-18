@@ -24,6 +24,9 @@ class OptionViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        self.tableView.registerNib(UINib(nibName: OPTIONCELLNIB, bundle: nil), forCellReuseIdentifier: OPTIONCELLID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +46,24 @@ class OptionViewController: UITableViewController {
         return optionTitles.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(OPTIONCELLID, forIndexPath: indexPath) as! OptionCell
 
+        cell.titleLabel.text = self.optionTitles[indexPath.row]
         // Configure the cell...
 
         return cell
     }
-    */
+ 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        
+        let h = self.tableView.frame.height
+        let hh = h / 3.0
+        
+        return hh
+    }
 
     /*
     // Override to support conditional editing of the table view.

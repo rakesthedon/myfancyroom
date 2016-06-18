@@ -14,8 +14,8 @@
 		8A0A59641D15D12E00F26089 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A59631D15D12E00F26089 /* MenuCell.swift */; };
 		8A0A59661D15D6B400F26089 /* profileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A59651D15D6B400F26089 /* profileCell.xib */; };
 		8A0A59691D15DBE500F26089 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A59681D15DBE500F26089 /* OptionViewController.swift */; };
-		8A0A596B1D15DBF500F26089 /* Option.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A596A1D15DBF500F26089 /* Option.storyboard */; };
 		8A0A596E1D15DC8800F26089 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A596D1D15DC8800F26089 /* OptionCell.xib */; };
+		8A0A59701D15E16700F26089 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A596F1D15E16700F26089 /* OptionCell.swift */; };
 		8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB43691D1597CE004B97E7 /* AppDelegate.swift */; };
 		8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB436B1D1597CE004B97E7 /* ViewController.swift */; };
 		8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB436D1D1597CE004B97E7 /* Main.storyboard */; };
@@ -34,8 +34,8 @@
 		8A0A59631D15D12E00F26089 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		8A0A59651D15D6B400F26089 /* profileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileCell.xib; sourceTree = "<group>"; };
 		8A0A59681D15DBE500F26089 /* OptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
-		8A0A596A1D15DBF500F26089 /* Option.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Option.storyboard; sourceTree = "<group>"; };
 		8A0A596D1D15DC8800F26089 /* OptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
+		8A0A596F1D15E16700F26089 /* OptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		8AEB43661D1597CE004B97E7 /* My Fancy Room.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fancy Room.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB43691D1597CE004B97E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AEB436B1D1597CE004B97E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 			children = (
 				8A0A596C1D15DC4100F26089 /* cells */,
 				8A0A59681D15DBE500F26089 /* OptionViewController.swift */,
-				8A0A596A1D15DBF500F26089 /* Option.storyboard */,
 			);
 			name = Selection;
 			sourceTree = "<group>";
@@ -120,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				8A0A596D1D15DC8800F26089 /* OptionCell.xib */,
+				8A0A596F1D15E16700F26089 /* OptionCell.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -234,7 +234,6 @@
 				8AEB43711D1597CE004B97E7 /* Assets.xcassets in Resources */,
 				8A0A59621D15D0AC00F26089 /* menuCell.xib in Resources */,
 				8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */,
-				8A0A596B1D15DBF500F26089 /* Option.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +296,7 @@
 				8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */,
 				8A0A59641D15D12E00F26089 /* MenuCell.swift in Sources */,
 				8A0A595E1D15CDBA00F26089 /* Theme.swift in Sources */,
+				8A0A59701D15E16700F26089 /* OptionCell.swift in Sources */,
 				8A0A59691D15DBE500F26089 /* OptionViewController.swift in Sources */,
 				8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */,
 				8A0A595B1D15C85B00F26089 /* Constants.swift in Sources */,
@@ -416,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Fancy Room/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donrakesdesign.My-Fancy-Room";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "My Fancy Room/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donrakesdesign.My-Fancy-Room";
 				PRODUCT_NAME = "$(TARGET_NAME)";
