@@ -10,60 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "My Fancy Room/OptionViewController.swift"
-            timestampString = "488009599.155452"
+            timestampString = "488042014.543911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Fancy_Room.OptionViewController.viewDidAppear (Swift.Bool) -&gt; ()"
-                  moduleName = "My Fancy Room"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yannickjacques/Documents/Hackathon/Flatbook/myfancyroom/My%20Fancy%20Room/OptionViewController.swift"
-                  timestampString = "488009600.226431"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "My_Fancy_Room.OptionViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "My Fancy Room"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yannickjacques/Documents/Hackathon/Flatbook/myfancyroom/My%20Fancy%20Room/OptionViewController.swift"
-                  timestampString = "488009600.226689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "My Fancy Room/OptionViewController.swift"
-            timestampString = "488009599.155452"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "doneAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "My Fancy Room/OptionViewController.swift"
-            timestampString = "488009599.155452"
+            filePath = "My Fancy Room/ViewController.swift"
+            timestampString = "488044106.008231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
+            landmarkName = "viewOrders()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Fancy Room/ViewController.swift"
+            timestampString = "488044203.342873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
+            landmarkName = "viewOrders()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Fancy Room/MenuViewController.swift"
+            timestampString = "488044312.874716"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "tableView(_:editActionsForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

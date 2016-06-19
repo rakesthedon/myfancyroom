@@ -10,6 +10,8 @@ import UIKit
 import SVProgressHUD
 import ENSwiftSideMenu
 import Font_Awesome_Swift
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
     var menuOptions = ["Food","Clothes","Amenities"]
     var menuIcons = [FAType.FACutlery,FAType.FAUserSecret,FAType.FATint]
     
+    var sideMenu:MenuViewController!
     let PROFILESECTION = 0
     let OPTIONSECTION = 1
     
@@ -31,7 +34,10 @@ class ViewController: UIViewController {
     var clothMenuSelection:OptionViewController!
     var amenitiesSelection:OptionViewController!
     
-    
+    let BASE_URL = "https://project-7504685312586081255.firebaseio.com/"
+    var BASE_REF:FIRDatabaseReference!
+    var USER_REF:FIRDatabaseReference!
+    var ORDER_REF:FIRDatabaseReference!
     
     
     override func viewDidLoad() {
@@ -41,11 +47,15 @@ class ViewController: UIViewController {
         self.sidemenuController = self.navigationController as! ENSideMenuNavigationController
         
         
+        
+        
         self.collectionview.registerNib(UINib(nibName: MENUCELLNIB, bundle:  nil), forCellWithReuseIdentifier: MENUCELLID)
         self.collectionview.registerNib(UINib(nibName: PROFILECELLNIB, bundle:  nil), forCellWithReuseIdentifier: PROFILECELLID)
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        self.BASE_REF = FIRDatabase.database().referenceFromURL(BASE_URL)
+        self.USER_REF = FIRDatabase.database().referenceFromURL("\(BASE_URL)/users")
+        self.ORDER_REF = FIRDatabase.database().referenceFromURL("\(BASE_URL)/orders")
         
         let vieww = UIView()
         vieww.frame = (self.navigationController?.view.frame)!
@@ -193,7 +203,7 @@ extension ViewController{
     
     func gotoOption(mode:Int){
         
-        let optionSelector = OptionViewController()
+        let optionSelector = initOptions()
         
         optionSelector.contentMode = mode
         optionSelector.delegate = self
@@ -237,7 +247,7 @@ extension ViewController:optionSelectionDelegate{
         self.navigationController?.popViewControllerAnimated(false)
         
         if self.foodSelection != nil && option == self.foodSelection {
-            self.foodMenuSelection = OptionViewController()
+            self.foodMenuSelection = initOptions()
             self.foodMenuSelection.delegate = self
             
             
@@ -261,7 +271,7 @@ extension ViewController:optionSelectionDelegate{
         
         if self.clothSelection != nil && option == self.clothSelection {
             
-            self.clothMenuSelection = OptionViewController()
+            self.clothMenuSelection = initOptions()
             self.clothMenuSelection.delegate = self
             
             if text == "Suit Rental"{
@@ -281,5 +291,88 @@ extension ViewController:optionSelectionDelegate{
         }
         
         
+    }
+    
+    func optionviewController(option:OptionViewController, order items:[String:Int]){
+        
+        for i in items
+        {
+            self.order(i.0, quantity: i.1)
+        }
+        
+        SVProgressHUD.showSuccessWithStatus("")
+        
+        self.navigationController?.popViewControllerAnimated(false)
+    }
+}
+
+
+extension ViewController{
+    
+    func getCurrentUserPreferences() {
+        self.USER_REF.child((FIRAuth.auth()?.currentUser!.uid)!).child("preferences").queryOrderedByValue().observeEventType(.Value, withBlock: { snapshot in
+            NSLog("key: %@", snapshot.key)
+        })
+    }
+    
+    func addPreference(category:String, preference:String, answer:String) {
+        let preference = ["preference": preference,
+                          "answer": answer
+        ]
+        self.USER_REF.child((FIRAuth.auth()?.currentUser!.uid)!).child("preferences").setValue(preference)
+    }
+    
+    func order(item:String, quantity:Int) {
+        let order = ["item": item,
+                     "quantity": quantity
+        ]
+        self.USER_REF.child((FIRAuth.auth()?.currentUser!.uid)!).child("orders").childByAutoId().setValue(order)
+    }
+    
+    func cancelOrder(orderId:String) {
+        self.USER_REF.child((FIRAuth.auth()?.currentUser!.uid)!).child("orders").child(orderId).removeValue()
+    }
+    
+    func getCurrentUserOrders(userId:String, completionBlock:(FIRDataSnapshot) -> Void) {
+        self.USER_REF.child((FIRAuth.auth()?.currentUser!.uid)!).child("orders").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            NSLog("key: %@", snapshot.key)
+            completionBlock(snapshot)
+        })
+    }
+}
+
+
+extension ViewController:menuDelegate {
+    
+    func viewOrders() {
+        
+        self.getCurrentUserOrders((FIRAuth.auth()?.currentUser?.uid)!, completionBlock: {
+            snapshot in
+            let menu = MenuViewController()
+            var orders:[String] = []
+            var keys:[String] = []
+            if snapshot.value is [String:AnyObject]{
+                for v in snapshot.value as! [String:AnyObject] {
+                    
+                    let s = (v.1 as! [String:AnyObject])["item"] as! String + " " + "\((v.1 as! [String:AnyObject])["quantity"] as! Int)"
+                    
+                    orders.append(s)
+                    keys.append(v.0)
+                }
+                
+                menu.orders = orders
+                menu.ordersKey = keys
+                menu.mode = 1
+                menu.menudelegate = self
+                
+                self.sidemenuController.sideMenu?.toggleMenu()
+                self.navigationController?.pushViewController(menu, animated: true)
+            }
+        })
+    }
+    
+    func cancelItem(key:String) {
+        
+        self.cancelOrder(key)
     }
 }

@@ -12,15 +12,20 @@ import UIKit
 @objc protocol optionSelectionDelegate{
     
     func optionviewController(option:OptionViewController, optionChosen text:String)
+    
+    func optionviewController(option:OptionViewController, order items:[String:Int])
 }
 
 class OptionViewController: UITableViewController, UINavigationControllerDelegate {
     
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     weak var delegate:optionSelectionDelegate!
     var optionTitles:[String] = []
     var picturesTitle:[String] = []
     var descriptions: [String] = []
     var cachedPictures:[String:UIImage] = [:]
+    
+    var order:[String:Int] = [:]
     
     let LISTMODE = 1
     let FANCYMENUMODE = 0
@@ -28,15 +33,18 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
     var mode:Int = 0
     var contentMode = 0
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let background = UIImageView(frame: self.view.frame)
-//        background.image = UIImage(named: "background")
-//        background.alpha = 0.7
-//        self.view.backgroundColor = UIColor.blackColor()
-//        
-//        self.view.addSubview(background)
+        //        let background = UIImageView(frame: self.view.frame)
+        //        background.image = UIImage(named: "background")
+        //        background.alpha = 0.7
+        //        self.view.backgroundColor = UIColor.blackColor()
+        //
+        //        self.view.addSubview(background)
         
         self.view.alpha = 0.0
         self.view.bringSubviewToFront(self.tableView)
@@ -57,9 +65,14 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
         
         
         self.tableView.scrollEnabled = true
+        
+        self.doneButton.title = "Done"
+        self.doneButton.enabled = true
         if self.mode == FANCYMENUMODE{
             
             self.tableView.scrollEnabled = false
+            self.doneButton.title = ""
+            self.doneButton.enabled = false
         }
         
         if self.mode == LISTMODE {
@@ -70,11 +83,11 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(0.375, animations: { 
+        UIView.animateWithDuration(0.375, animations: {
             
             self.view.alpha = 1.0
-            }) { (done) in
-                
+        }) { (done) in
+            
         }
     }
     
@@ -83,11 +96,11 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
         
         
         
-        UIView.animateWithDuration(0.375, animations: { 
+        UIView.animateWithDuration(0.375, animations: {
             self.view.alpha = 0
-            }) { (done) in
-                
-                self.navigationController?.popViewControllerAnimated(false)
+        }) { (done) in
+            
+            self.navigationController?.popViewControllerAnimated(false)
         }
         
         
@@ -114,35 +127,36 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if self.mode == FANCYMENUMODE{
-        let cell = tableView.dequeueReusableCellWithIdentifier(OPTIONCELLID, forIndexPath: indexPath) as! OptionCell
-        
-        
-        
-        
-        if self.cachedPictures[self.picturesTitle[indexPath.row]] != nil {
-        
-        cell.customImageView.image = self.cachedPictures[self.picturesTitle[indexPath.row]]
-        }
-        
-        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(OPTIONCELLID, forIndexPath: indexPath) as! OptionCell
             
-            self.cachedPictures[self.picturesTitle[indexPath.row]] = UIImage(named: self.picturesTitle[indexPath.row])
-            cell.customImageView.image = self.cachedPictures[self.picturesTitle[indexPath.row]]
-        }
-        
-        cell.titleLabel.text = self.optionTitles[indexPath.row]
-        cell.descriptionLabel.text = self.descriptions[indexPath.row]
-        cell.titleLabel.numberOfLines = 0
-        cell.titleLabel.sizeToFit()
-        
-        
-        
-        //cell.bringSubviewToFront(cell.titleLabel)
-        return cell
+            
+            
+            
+            if self.cachedPictures[self.picturesTitle[indexPath.row]] != nil {
+                
+                cell.customImageView.image = self.cachedPictures[self.picturesTitle[indexPath.row]]
+            }
+                
+            else {
+                
+                self.cachedPictures[self.picturesTitle[indexPath.row]] = UIImage(named: self.picturesTitle[indexPath.row])
+                cell.customImageView.image = self.cachedPictures[self.picturesTitle[indexPath.row]]
+            }
+            
+            cell.titleLabel.text = self.optionTitles[indexPath.row]
+            cell.descriptionLabel.text = self.descriptions[indexPath.row]
+            cell.titleLabel.numberOfLines = 0
+            cell.titleLabel.sizeToFit()
+            
+            
+            
+            //cell.bringSubviewToFront(cell.titleLabel)
+            return cell
         }
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! OptionCell
         cell.backgroundColor = UIColor.clearColor()
+        cell.delegate = self
         cell.titleLabel?.text = self.optionTitles[indexPath.row]
         
         return cell
@@ -152,11 +166,11 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
         
         
         if self.mode == FANCYMENUMODE {
-        let h = (self.tableView.frame.height - (self.navigationController?.navigationBar.frame.height)! - UIApplication.sharedApplication().statusBarFrame.height)
+            let h = (self.tableView.frame.height - (self.navigationController?.navigationBar.frame.height)! - UIApplication.sharedApplication().statusBarFrame.height)
             
             let hh = h / CGFloat(self.descriptions.count > 0 ? self.descriptions.count : 1)
-        
-        return hh
+            
+            return hh
         }
         else {
             
@@ -176,21 +190,21 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-//        if contentMode != AMENITIESOPTION {
-//            
-//            let option = OptionViewController()
-//            option.mode = LISTMODE
-//            if contentMode == FOODOPTION{
-//                
-//                if indexPath.row == 0{
-//                    option.optionTitles = ["Carbet Sauvignon, $29","Pinot Grigio, $34","Chardonnay"]
-//                }
-//            }
-//            
-//            self.navigationController?.pushViewController(option, animated: true)
-//        }
+        //        if contentMode != AMENITIESOPTION {
+        //
+        //            let option = OptionViewController()
+        //            option.mode = LISTMODE
+        //            if contentMode == FOODOPTION{
+        //
+        //                if indexPath.row == 0{
+        //                    option.optionTitles = ["Carbet Sauvignon, $29","Pinot Grigio, $34","Chardonnay"]
+        //                }
+        //            }
+        //
+        //            self.navigationController?.pushViewController(option, animated: true)
+        //        }
         
-        if self.delegate != nil {
+        if self.delegate != nil && self.mode == FANCYMENUMODE{
             
             let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! OptionCell
             
@@ -242,5 +256,24 @@ class OptionViewController: UITableViewController, UINavigationControllerDelegat
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+
+extension OptionViewController:orderDelegate{
+    
+    func orderEdit(item: String, quantity:Int) {
+        
+        self.order[item] = quantity
+    }
+    
+    
+    @IBAction func doneAction(sender: UIBarButtonItem) {
+        
+        if self.delegate != nil {
+            
+            self.delegate.optionviewController(self, order: self.order)
+        }
+    }
     
 }

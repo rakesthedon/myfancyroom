@@ -5,7 +5,8 @@ use_frameworks!
 
 target 'My Fancy Room' do
 
-pod 'Firebase'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 pod 'Font-Awesome-Swift'
 pod 'ENSwiftSideMenu'
 pod 'SVProgressHUD'

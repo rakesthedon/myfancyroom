@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let ANIMATIONDURATION = 0.5
 let MENUCELLID = "MenuCell"
@@ -28,3 +29,12 @@ let FOODMENUOPTION = 10
 let CLOTHEOPTION = 1
 let CLOTHEMENUOPTION = 11
 let AMENITIESOPTION = 2
+
+
+func initOptions() -> OptionViewController{
+
+    
+    let ST = UIStoryboard(name: "Option", bundle: nil).instantiateInitialViewController() as! OptionViewController
+    
+    return ST
+}

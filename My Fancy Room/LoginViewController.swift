@@ -9,6 +9,9 @@
 import UIKit
 import SVProgressHUD
 import ENSwiftSideMenu
+import Firebase
+import FirebaseAuth
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
@@ -18,6 +21,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginView: UIView!
     
+    var mainView:ENSideMenuNavigationController!
+    var sideMenu:MenuViewController!
+    
+    let BASE_URL = "https://project-7504685312586081255.firebaseio.com/"
+    var BASE_REF:FIRDatabaseReference!
+    var USER_REF:FIRDatabaseReference!
+    var ORDER_REF:FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +38,11 @@ class LoginViewController: UIViewController {
         loginButton.layer.borderColor = UIColor.whiteColor().CGColor
         loginButton.layer.cornerRadius = 5
         self.loginButton.enabled = false
+        
+        
+        self.BASE_REF = FIRDatabase.database().referenceFromURL(BASE_URL)
+        self.USER_REF = FIRDatabase.database().referenceFromURL("\(BASE_URL)/users")
+        self.ORDER_REF = FIRDatabase.database().referenceFromURL("\(BASE_URL)/orders")
         
         
         emailTF.attributedPlaceholder = NSAttributedString(string: "email...", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
@@ -100,7 +115,12 @@ extension LoginViewController {
             
             SVProgressHUD.show()
             
-            let timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(self.gotoMenu), userInfo: nil, repeats: false)
+            
+            self.login(self.emailTF.text!, password: self.passwordTF.text!, completionBlock: {
+            
+                NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(self.gotoMenu), userInfo: nil, repeats: false)
+            })
+            
             
         }
         
@@ -110,8 +130,46 @@ extension LoginViewController {
         
         let st = UIStoryboard(name: "Main", bundle: nil)
         let nav = st.instantiateInitialViewController() as! ENSideMenuNavigationController
-        nav.sideMenu = nil
-        self.presentViewController(nav, animated: true) {
+        
+        let menu = MenuViewController()
+        menu.logoutdelegate = self
+        nav.sideMenu = ENSideMenu(sourceView: nav.view, menuViewController: menu, menuPosition: .Left, blurStyle: .Dark)
+        //MenuViewController()
+        
+        self.mainView = nav
+            self.presentViewController(nav, animated: true) {
+            menu.menudelegate = nav.childViewControllers[0] as! ViewController
+        }
+    }
+}
+
+
+extension LoginViewController {
+    
+    func login(email:String, password:String, completionBlock:() -> Void) {
+        FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) -> Void in
+            if error == nil {
+                
+                completionBlock()
+            }
+            else {
+                
+            }
+            
+        })
+    }
+    
+    func logout(userId:String) {
+        try! FIRAuth.auth()?.signOut()
+    }
+}
+
+extension LoginViewController:logoutDelegate {
+    
+    func didLogout(){
+        
+        self.logout((FIRAuth.auth()?.currentUser?.uid)!)
+        self.mainView.dismissViewControllerAnimated(true) { 
             
         }
     }

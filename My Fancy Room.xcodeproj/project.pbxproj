@@ -18,6 +18,10 @@
 		8A0A59701D15E16700F26089 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A596F1D15E16700F26089 /* OptionCell.swift */; };
 		8A0A59901D160D2E00F26089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A598F1D160D2E00F26089 /* Assets.xcassets */; };
 		8A5712061D16408C00340353 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5712051D16408C00340353 /* cell.xib */; };
+		8A57120A1D16DF5900340353 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A5712091D16DF5900340353 /* GoogleService-Info.plist */; };
+		8A57120C1D16E06900340353 /* Option.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A57120B1D16E06900340353 /* Option.storyboard */; };
+		8A57120F1D16ECDE00340353 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A57120E1D16ECDE00340353 /* MenuViewController.swift */; };
+		8A5712111D16ED0900340353 /* sideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5712101D16ED0900340353 /* sideMenuCell.xib */; };
 		8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB43691D1597CE004B97E7 /* AppDelegate.swift */; };
 		8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB436B1D1597CE004B97E7 /* ViewController.swift */; };
 		8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB436D1D1597CE004B97E7 /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 		8A0A596F1D15E16700F26089 /* OptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		8A0A598F1D160D2E00F26089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "My Fancy Room/Assets.xcassets"; sourceTree = "<group>"; };
 		8A5712051D16408C00340353 /* cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
+		8A5712091D16DF5900340353 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A57120B1D16E06900340353 /* Option.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Option.storyboard; sourceTree = "<group>"; };
+		8A57120E1D16ECDE00340353 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8A5712101D16ED0900340353 /* sideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sideMenuCell.xib; sourceTree = "<group>"; };
 		8AEB43661D1597CE004B97E7 /* My Fancy Room.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fancy Room.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB43691D1597CE004B97E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AEB436B1D1597CE004B97E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,7 @@
 			children = (
 				8A0A596C1D15DC4100F26089 /* cells */,
 				8A0A59681D15DBE500F26089 /* OptionViewController.swift */,
+				8A57120B1D16E06900340353 /* Option.storyboard */,
 			);
 			name = Selection;
 			sourceTree = "<group>";
@@ -117,6 +126,15 @@
 				8A5712051D16408C00340353 /* cell.xib */,
 			);
 			name = cells;
+			sourceTree = "<group>";
+		};
+		8A57120D1D16ECBA00340353 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8A57120E1D16ECDE00340353 /* MenuViewController.swift */,
+				8A5712101D16ED0900340353 /* sideMenuCell.xib */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		8AEB435D1D1597CE004B97E7 = {
@@ -144,10 +162,12 @@
 				8AEB43691D1597CE004B97E7 /* AppDelegate.swift */,
 				8AEB437B1D15B208004B97E7 /* Login */,
 				8A0A595F1D15D02A00F26089 /* Main */,
+				8A57120D1D16ECBA00340353 /* Menu */,
 				8A0A59671D15DBC300F26089 /* Selection */,
 				8A0A595C1D15C87100F26089 /* Tool */,
 				8AEB43721D1597CE004B97E7 /* LaunchScreen.storyboard */,
 				8AEB43751D1597CE004B97E7 /* Info.plist */,
+				8A5712091D16DF5900340353 /* GoogleService-Info.plist */,
 			);
 			path = "My Fancy Room";
 			sourceTree = "<group>";
@@ -182,6 +202,7 @@
 				8AEB43641D1597CE004B97E7 /* Resources */,
 				F20756FCBCC2D066D10F4C95 /* [CP] Embed Pods Frameworks */,
 				E2B80622AE8304AF16A90019 /* [CP] Copy Pods Resources */,
+				D5D6B7475D7C5AAB0123C170 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,9 +254,12 @@
 			files = (
 				8A0A596E1D15DC8800F26089 /* OptionCell.xib in Resources */,
 				8A5712061D16408C00340353 /* cell.xib in Resources */,
+				8A57120A1D16DF5900340353 /* GoogleService-Info.plist in Resources */,
 				8AEB437D1D15B487004B97E7 /* Login.storyboard in Resources */,
 				8A0A59661D15D6B400F26089 /* profileCell.xib in Resources */,
+				8A57120C1D16E06900340353 /* Option.storyboard in Resources */,
 				8AEB43741D1597CE004B97E7 /* LaunchScreen.storyboard in Resources */,
+				8A5712111D16ED0900340353 /* sideMenuCell.xib in Resources */,
 				8A0A59901D160D2E00F26089 /* Assets.xcassets in Resources */,
 				8A0A59621D15D0AC00F26089 /* menuCell.xib in Resources */,
 				8AEB436F1D1597CE004B97E7 /* Main.storyboard in Resources */,
@@ -258,6 +282,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D5D6B7475D7C5AAB0123C170 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Fancy Room/Pods-My Fancy Room-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E2B80622AE8304AF16A90019 /* [CP] Copy Pods Resources */ = {
@@ -301,6 +340,7 @@
 				8AEB436C1D1597CE004B97E7 /* ViewController.swift in Sources */,
 				8A0A59641D15D12E00F26089 /* MenuCell.swift in Sources */,
 				8A0A595E1D15CDBA00F26089 /* Theme.swift in Sources */,
+				8A57120F1D16ECDE00340353 /* MenuViewController.swift in Sources */,
 				8A0A59701D15E16700F26089 /* OptionCell.swift in Sources */,
 				8A0A59691D15DBE500F26089 /* OptionViewController.swift in Sources */,
 				8AEB436A1D1597CE004B97E7 /* AppDelegate.swift in Sources */,

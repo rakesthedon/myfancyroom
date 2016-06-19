@@ -8,8 +8,16 @@
 
 import UIKit
 
+@objc protocol orderDelegate{
+    
+    func orderEdit(item:String, quantity:Int)
+}
+
 class OptionCell: UITableViewCell {
 
+    
+    weak var delegate:orderDelegate!
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var customImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -39,14 +47,20 @@ class OptionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func changeQuantity(sender: AnyObject) {
+    @IBAction func changeQuantity(sender: UIStepper) {
         
-        if self.quantity < 10 {
-            self.quantity += 1
-        }
+        
+        
+        
+            self.quantity =  Int(sender.value)
         
         
         self.quantityTF.text = "\(self.quantity)"
+        
+        if self.delegate != nil{
+            
+            self.delegate.orderEdit(self.titleLabel.text!, quantity: self.quantity)
+        }
     }
     
     
