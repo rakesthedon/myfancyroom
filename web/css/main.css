@@ -121,3 +121,10 @@ ul li {
 .glyphicon {
 	padding-bottom: 3%;
 }
+
+
+input[type=email]:focus {
+  box-shadow: 0 0 5px rgb(230, 159, 67);
+  outline:none; 
+  border-color: rgb(230, 159, 67);
+}
