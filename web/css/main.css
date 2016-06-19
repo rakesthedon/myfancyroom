@@ -78,6 +78,7 @@ h1 {
 
 p {
 	color: white;
+	font-size: 17px;
 }
 
 section {
@@ -95,7 +96,7 @@ section.alt {
 }
 
 #intro h1 {
-    font-size: 55px;
+    font-size: 43px;
     line-height: 80px;
 }
 
@@ -111,4 +112,12 @@ ul {
 
 ul li {
     margin: 10px;
+}
+
+.text {
+	padding-top: 8%;
+}
+
+.glyphicon {
+	padding-bottom: 3%;
 }
