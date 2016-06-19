@@ -1,0 +1,91 @@
+{
+    "categories": {
+        "Food": {
+            "subcategory": "Alcohol",
+            "subcategory": "Beverage",
+            "subcategory": "Snacks"
+        },
+        "Clothes": {
+            "subcategory": "Suit Rental",
+            "subcategory": "Casual Clothes",
+            "subcategory": "Underwear"
+        },
+        "Amenities": {
+            "subcategory": "Dental Floss"
+        }
+    },
+    "questions":{
+        "q1":
+        {
+            "category": "Food",
+            "text": "Allergies"
+        },
+        "q2":
+        {
+            "category": "Food",
+            "text": "Dietary Preferences"
+        },
+        "q3":
+        {
+            "category": "Clothes",
+            "text": "Shirt Size"
+        },
+        "q4":
+        {
+            "category": "Clothes",
+            "text": "Pants Size"
+        },
+        "q5":
+        {
+            "category": "Clothes",
+            "text": "Shoe Size"
+        },
+        "q6":
+        {
+            "category": "Clothes",
+            "text": "Underwear Size"
+        }
+    },
+    "users":{
+        "u1":
+        {
+             "firstName": "",
+             "lastName": "",
+             "email": "",
+             "phoneNumber": "",
+             "preferences":{
+                "Food":[
+                    { "preference": "Allergies", "answer": "Peanuts"}
+                ]
+            }
+        }
+    },
+    "flats":{
+        "f1":
+        {
+             "id": "",
+             "name": "",
+             "address": "",
+             "city": "",
+             "state": "",
+             "country": ""
+        }
+    },
+    "reservations":{
+        "r1":
+        {
+            "id": "",
+            "userId": "",
+            "flatId": "",
+            "startDate": "",
+            "endDate": ""
+        }
+    },
+    "orders":{
+        "o1":
+        {
+            "item": "",
+            "quantity": ""
+        }
+    }
+}
